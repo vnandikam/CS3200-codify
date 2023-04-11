@@ -1,9 +1,7 @@
-# MySQL + Flask Boilerplate Project
+# Codify
 
-This repo contains a boilerplate setup for spinning up 3 Docker containers: 
-1. A MySQL 8 container for obvious reasons
-1. A Python Flask container to implement a REST API
-1. A Local AppSmith Server
+Codify is a social media platform that will allow college students to collaborate on software related projects. This aims to allow people to find people to work on their personal projects as well as discover new projects to join. Each project will have one designer, one project lead who will be the project creator, and up to three developers. Every user can pick what kind of role they would like to contribute to and then view and search for various projects. Users can then request to join specific projects, as well as make their own projects. Projects have different tags, which allow users to sort through the ones that they’re specifically interested in, and which align closest to their skills. To expedite the process of allowing users to meet like-minded individuals, there is a people search so users can find people based on their tags and usernames. Codify also has a built-in messaging feature in order to facilitate communication between users. All users have user profiles where they are able to convey their skills as well as links to their GitHub/portfolios. Projects also have profiles where administrators can add useful links as well as the description of the project as well the types of collaborators they are interested in.
+
 
 ## How to setup and start the containers
 **Important** - you need Docker Desktop installed
