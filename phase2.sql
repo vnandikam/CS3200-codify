@@ -36,7 +36,7 @@ FOREIGN KEY(project_id) REFERENCES emp_project(project_id)
 
 CREATE TABLE Employee_Info(
 employee_id int PRIMARY KEY,
-birthday date NOT NULL,
+birthday varchar(15) NOT NULL,
 street varchar(100) NOT NULL,
 zip varchar(5) NOT NULL,
 city varchar(50) NOT NULL,
@@ -44,23 +44,17 @@ gender varchar(50),
 fname varchar(100) NOT NULL,
 minit varchar(5),
 lname varchar(100) NOT NULL,
-ssn int UNIQUE NOT NULL,
+ssn varchar(11) UNIQUE NOT NULL,
 visa varchar(100) NOT NULL,
 disability varchar(100) ,
 vet_stat varchar(100),
 email varchar(100) UNIQUE NOT NULL,
-startDate date NOT NULL,
-phone varchar(10) UNIQUE NOT NULL,
+startDate varchar(15) NOT NULL,
+phone varchar(12) UNIQUE NOT NULL,
 FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
                         ON UPDATE CASCADE
                         ON DELETE CASCADE
 );
-
-ALTER TABLE Employee_Info Modify column birthday varchar(15);
-ALTER TABLE Employee_Info Modify column ssn varchar(11);
-ALTER TABLE Employee_Info Modify column startDate varchar(15);
-ALTER TABLE Employee_Info Modify column phone varchar(12);
-
 
 CREATE TABLE dependent(
   emp int NOT NULL,
@@ -93,31 +87,23 @@ CREATE TABLE payroll(
 
 CREATE TABLE timesheet(
   emp_id int,
-  clock_in DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-  clock_out DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  date_worked DATE NOT NULL,
+  clock_in varchar(15) NOT NULL,
+  clock_out varchar(15) NOT NULL,
+  date_worked varchar(15) NOT NULL,
   FOREIGN KEY(emp_id) REFERENCES Employee(employee_id)
                     ON UPDATE CASCADE
                     ON DELETE RESTRICT
 );
 
-ALTER TABLE timesheet Modify column clock_in varchar(15);
-ALTER TABLE timesheet Modify column clock_out varchar(15);
-ALTER TABLE timesheet Modify column date_worked varchar(15);
-
-
 
 CREATE TABLE officeResources(
   resource_name varchar(50),
-  issue_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+  issue_date varchar(15) NOT NULL,
   dep_num int,
   FOREIGN KEY (dep_num) REFERENCES department(dep_id)
                           ON UPDATE CASCADE
                           ON DELETE RESTRICT
 );
-
-ALTER TABLE officeResources Modify column issue_date varchar(15);
-
 
 CREATE TABLE users(
   user_id int PRIMARY KEY,
@@ -474,8 +460,6 @@ INSERT INTO Employee(employee_id,title,dep,project_id) VALUES (97,'Research Nurs
 INSERT INTO Employee(employee_id,title,dep,project_id) VALUES (98,'Quality Control Specialist',41,6963);
 INSERT INTO Employee(employee_id,title,dep,project_id) VALUES (99,'Desktop Support Technician',19,4264);
 INSERT INTO Employee(employee_id,title,dep,project_id) VALUES (100,'Information Systems Manager',44,9423);
-
-DELETE FROM Employee_Info
 
 INSERT INTO Employee_Info(employee_id,birthday,street,zip,city,gender,fname,minit,lname,ssn,visa,disability,vet_stat,email,startDate,phone) VALUES (1,'6/28/1968','29800 Dunning Plaza',19748,'Buga','Non-binary','Mia','H','Compston','149-74-6489','F1','true','false','mcompston0@ucsd.edu','11/9/2020','899-727-4575');
 INSERT INTO Employee_Info(employee_id,birthday,street,zip,city,gender,fname,minit,lname,ssn,visa,disability,vet_stat,email,startDate,phone) VALUES (2,'12/17/1994','53572 Declaration Crossing',29698,'Jiuli','Female','Flss','P','Vittore','867-45-9972','N/A','true','true','fvittore1@amazon.de','3/30/2013','394-730-3814');
