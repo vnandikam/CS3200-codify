@@ -136,6 +136,7 @@ CREATE TABLE userprofile(
   user_id int,
   FOREIGN KEY (user_id) REFERENCES users(user_id)
                           ON UPDATE CASCADE
+                          On DELETE CASCADE
 );
 
 CREATE TABLE socials(
