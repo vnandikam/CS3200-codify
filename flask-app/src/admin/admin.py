@@ -11,9 +11,11 @@ admin = Blueprint('admin', __name__)
 def get_timesheet_info():
     cursor = db.get_db().cursor()
     query = '''
-        SELECT t.emp_id AS id, t.clock_in AS clockin, 
-        t.clock_out as clockout, t.date_worked as date
-        FROM timesheet AS t'''
+        SELECT t.emp_id AS id, t.clock_in AS clockin, t.clock_out as clockout, t.date_worked as date, e.fname as fname
+        FROM timesheet AS t 
+        JOIN Employee_Info e ON t.emp_id = e.employee_id
+    
+        '''
 
     cursor.execute(query)
     # grab the column headers from the returned data
