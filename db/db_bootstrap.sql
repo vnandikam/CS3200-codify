@@ -110,7 +110,7 @@ CREATE TABLE officeResources(
 
 CREATE TABLE projects
 (
-   project_id varchar(50) PRIMARY KEY,
+   project_id int PRIMARY KEY,
    location varchar(50),
    project_description varchar(80),
    project_name varchar(40),
