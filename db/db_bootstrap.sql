@@ -111,7 +111,7 @@ CREATE TABLE officeResources(
 CREATE TABLE projects
 (
    project_id varchar(50) PRIMARY KEY,
-   location   varchar(50),
+   location varchar(50),
    project_description varchar(80),
    project_name varchar(40),
    project_status int,
@@ -120,14 +120,14 @@ CREATE TABLE projects
 
 
 CREATE TABLE users(
- int PRIMARY KEY,
+  user_id int PRIMARY KEY,
   email varchar(100) UNIQUE NOT NULL,
   phone_num varchar(10) UNIQUE NOT NULL,
   employee_id int,
   project_id int,
   FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
                           ON UPDATE CASCADE
-                          ON DELETE RESTRICT
+                          ON DELETE RESTRICT,
 
   FOREIGN KEY (project_id) REFERENCES projects (project_id)
                           ON UPDATE CASCADE
@@ -142,8 +142,8 @@ CREATE TABLE userprofile(
   username varchar(20) NOT NULL,
   userRole varchar(20) NOT NULL,
   portfolio varchar(200) NOT NULL,
- int,
-  FOREIGN KEY ) REFERENCES users)
+  user_id int,
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
                           ON UPDATE CASCADE
 );
 
@@ -152,8 +152,8 @@ CREATE TABLE socials(
   instagram varchar(100),
   facebook varchar(100),
   twitter varchar(100),
- int,
-  FOREIGN KEY ) REFERENCES users)
+  user_id int,
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
                           ON UPDATE CASCADE
 );
 
@@ -162,8 +162,8 @@ CREATE TABLE user_demo(
   race varchar(50),
   gender varchar(50),
   age int NOT NULL,
- int,
-  FOREIGN KEY ) REFERENCES users)
+  user_id int,
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
                ON UPDATE CASCADE
                ON DELETE RESTRICT
 );
