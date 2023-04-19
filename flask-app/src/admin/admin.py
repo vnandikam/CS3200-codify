@@ -227,7 +227,7 @@ def get_department_info():
 # Get all the employee status info from the database
 
 @admin.route('/employee_status_info', methods=['GET'])
-def get_dependent_info():
+def get_employee_status_info():
     cursor = db.get_db().cursor()
     query = '''
         SELECT e.visa, e.disability, e.vet_stat
