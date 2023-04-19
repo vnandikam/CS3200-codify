@@ -5,8 +5,6 @@ from src import db
 users = Blueprint('users', __name__)
 
 # get all users
-
-
 @users.route('/user_dashboard', methods=['GET'])
 def get_users():
     cursor = db.get_db().cursor()
