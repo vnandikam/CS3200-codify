@@ -71,11 +71,11 @@ def get_employee_info():
 # Get all the payroll info from the database
 
 @admin.route('/payroll_info', methods=['GET'])
-def get_office_resources_info():
+def get_payroll_info():
     cursor = db.get_db().cursor()
     query = '''
-        SELECT o.resource_name AS resource, o.issue_date as issue
-        FROM officeResources AS o
+        SELECT p.resource_name AS resource, o.issue_date as issue
+        FROM payroll AS p
        
     
         '''
