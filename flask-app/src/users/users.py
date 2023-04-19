@@ -12,8 +12,8 @@ def get_users():
 
     # use cursor to query the database for a list of users
     query = '''
-        SELECT u.user_id AS u_id, u.fname AS firstName, u.userRole AS role, u.portfolio AS portfolio
-        FROM users u JOIN userprofile AS u
+        SELECT DISTINCT u.user_id AS u_id, u.fname AS firstName, u.userRole AS role, u.portfolio AS portfolio
+        FROM users JOIN userprofile AS u
         ORDER BY firstName
 
     '''
