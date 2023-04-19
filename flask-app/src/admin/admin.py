@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify, make_response
+from flask import Blueprint, request, jsonify, make_response, current_app
 import json
 from src import db
 
@@ -42,7 +42,7 @@ def get_timesheet_info():
 def get_employee_info():
     cursor = db.get_db().cursor()
     query = '''
-        SELECT e.employee_id AS id, ei.fname AS fname, e.dep AS depname, e.title AS role
+        SELECT e.employee_id, ei.fname, e.dep, e.title 
         FROM Employee_Info AS ei
         JOIN Employee AS e
         ON e.employee_id = ei.employee_id
@@ -161,7 +161,6 @@ def get_emp_project_info():
     return jsonify(json_data)
 
 
-
 # Get all the dependent info from the database
 
 @admin.route('/dependent_info', methods=['GET'])
@@ -256,6 +255,7 @@ def get_employee_status_info():
 
 # Get all the employee address info from the database
 
+
 @admin.route('/employee_address', methods=['GET'])
 def get_employee_address():
     cursor = db.get_db().cursor()
@@ -285,4 +285,28 @@ def get_employee_address():
     return jsonify(json_data)
 
 
+# post an entry to the employee info dashboard
 
+@admin.route('/employee_info_post', methods=['POST'])
+def add_new_employee_info():
+
+    # collecting data from request object
+    the_data = request.json
+    current_app.logger.info(the_data)
+
+    # extracting the variable
+    employee_id = the_data['employee_id']
+    fname = the_data['fname']
+    dep = the_data['dep']
+    title = the_data['title']
+
+    # constructing the query
+    query = 'insert into employee_info (employee_id, fname, dep, title) values ("'
+    query += str(employee_id) + '","'
+    query += fname + '","'
+    query += str(dep) + '","'
+    query += title + ')'
+
+    current_app.logger.info(query)
+
+    return 'Success!'

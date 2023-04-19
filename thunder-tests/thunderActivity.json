@@ -227,14 +227,38 @@
     "_id": "7449481a-201b-4601-9ba1-0226c51af240",
     "colId": "history",
     "containerId": "",
-    "name": "localhost:8001/a/employee_address",
-    "url": "localhost:8001/a/employee_address",
-    "method": "GET",
+    "name": "POST employee_info_post",
+    "url": "localhost:8001/a/employee_info_post",
+    "method": "POST",
     "sortNum": 0,
     "created": "2023-04-19T14:16:36.664Z",
-    "modified": "2023-04-19T14:16:36.664Z",
+    "modified": "2023-04-19T16:13:26.689Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"employee_id\" : 101,\n  \"fname\": \"Jessica\",\n  \"dep\": 150,\n  \"title\": \"Clinical Specialist\"\n  \n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "c06dedd2-f2e7-4224-bf8c-d67b3a044f95",
+    "colId": "history",
+    "containerId": "",
+    "name": "POST 2 employee_info_post",
+    "url": "localhost:8001/a/employee_info_post",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-04-19T16:27:51.647Z",
+    "modified": "2023-04-19T16:29:20.183Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"employee_id\" : 102,\n  \"fname\": \"Juliette\",\n  \"dep\": 155,\n  \"title\": \"Librarian\"\n  \n}",
+      "form": []
+    },
     "tests": []
   }
 ]
