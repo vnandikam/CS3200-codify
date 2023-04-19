@@ -1,10 +1,10 @@
 DROP SCHEMA IF EXISTS `codifydb` ;
 Create database codifydb;
+use codifydb;
 
 grant all privileges on codifydb.* to 'webapp'@'%';
 flush privileges;
 
-use codifydb;
 
 CREATE TABLE department(
   location varchar(100),
@@ -113,12 +113,7 @@ CREATE TABLE users(
   email varchar(100) UNIQUE NOT NULL,
   phone_num varchar(10) UNIQUE NOT NULL,
   employee_id int,
-  project_id int,
   FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
-                          ON UPDATE CASCADE
-                          ON DELETE RESTRICT
-
-  FOREIGN KEY (project_id) REFERENCES Projects(project_id)
                           ON UPDATE CASCADE
                           ON DELETE RESTRICT
 );
