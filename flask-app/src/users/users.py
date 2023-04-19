@@ -169,3 +169,4 @@ def get_user_info():
     the_response.status_code = 200
     the_response.mimetype = 'application/json'
     return the_response
+
