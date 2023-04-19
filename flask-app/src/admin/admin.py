@@ -11,7 +11,7 @@ admin = Blueprint('admin', __name__)
 def get_timesheet_info():
     cursor = db.get_db().cursor()
     query = '''
-        SELECT t.emp_id AS id, t.clock_in AS clockin, t.clock_out as clockout, t.date_worked as date, e.fname as fname
+        SELECT t.emp_id AS id, t.clock_in AS clockin, t.clock_out AS clockout, t.date_worked AS date, e.fname AS fname
         FROM timesheet AS t 
         JOIN Employee_Info e ON t.emp_id = e.employee_id
     
@@ -42,7 +42,7 @@ def get_timesheet_info():
 def get_employee_info():
     cursor = db.get_db().cursor()
     query = '''
-        SELECT e.employee_id AS id, ei.fname as fname, e.dep as depname, e.title as role
+        SELECT e.employee_id AS id, ei.fname AS fname, e.dep AS depname, e.title AS role
         FROM Employee_Info AS ei
         JOIN Employee AS e
         ON e.employee_id = ei.employee_id
@@ -74,7 +74,7 @@ def get_employee_info():
 def get_payroll_info():
     cursor = db.get_db().cursor()
     query = '''
-        SELECT p.resource_name AS resource, o.issue_date as issue
+        SELECT p.amount, p.stock, p.salary, p.pay_interval, p.bonus
         FROM payroll AS p
        
     
@@ -105,7 +105,7 @@ def get_payroll_info():
 def get_office_resources_info():
     cursor = db.get_db().cursor()
     query = '''
-        SELECT o.resource_name AS resource, o.issue_date as issue
+        SELECT o.resource_name, o.issue_date
         FROM officeResources AS o
        
     
@@ -128,4 +128,131 @@ def get_office_resources_info():
         json_data.append(dict(zip(column_headers, row)))
 
     return jsonify(json_data)
+
+
+# Get all the emp_project info from the database
+
+@admin.route('/emp_project_info', methods=['GET'])
+def get_emp_project_info():
+    cursor = db.get_db().cursor()
+    query = '''
+        SELECT e.project_id, e.location, e.project_lead, e.department
+        FROM emp_project AS e
+       
+    
+        '''
+
+    cursor.execute(query)
+    # grab the column headers from the returned data
+    column_headers = [x[0] for x in cursor.description]
+
+    # create an empty dictionary object to use in
+    # putting column headers together with data
+    json_data = []
+
+    # fetch all the data from the cursor
+    theData = cursor.fetchall()
+
+    # for each of the rows, zip the data elements together with
+    # the column headers.
+    for row in theData:
+        json_data.append(dict(zip(column_headers, row)))
+
+    return jsonify(json_data)
+
+
+
+# Get all the dependent info from the database
+
+@admin.route('/dependent_info', methods=['GET'])
+def get_dependent_info():
+    cursor = db.get_db().cursor()
+    query = '''
+        SELECT d.fname, d.minit, d.lname, d.relation, d.gender
+        FROM dependent AS d
+       
+    
+        '''
+
+    cursor.execute(query)
+    # grab the column headers from the returned data
+    column_headers = [x[0] for x in cursor.description]
+
+    # create an empty dictionary object to use in
+    # putting column headers together with data
+    json_data = []
+
+    # fetch all the data from the cursor
+    theData = cursor.fetchall()
+
+    # for each of the rows, zip the data elements together with
+    # the column headers.
+    for row in theData:
+        json_data.append(dict(zip(column_headers, row)))
+
+    return jsonify(json_data)
+
+
+# Get all the department info from the database
+
+@admin.route('/department_info', methods=['GET'])
+def get_department_info():
+    cursor = db.get_db().cursor()
+    query = '''
+        SELECT d.location, d.dep_id, d.dep_name
+        FROM department AS d
+       
+    
+        '''
+
+    cursor.execute(query)
+    # grab the column headers from the returned data
+    column_headers = [x[0] for x in cursor.description]
+
+    # create an empty dictionary object to use in
+    # putting column headers together with data
+    json_data = []
+
+    # fetch all the data from the cursor
+    theData = cursor.fetchall()
+
+    # for each of the rows, zip the data elements together with
+    # the column headers.
+    for row in theData:
+        json_data.append(dict(zip(column_headers, row)))
+
+    return jsonify(json_data)
+
+
+# Get all the employee status info from the database
+
+@admin.route('/employee_status_info', methods=['GET'])
+def get_dependent_info():
+    cursor = db.get_db().cursor()
+    query = '''
+        SELECT e.visa, e.disability, e.vet_stat
+        FROM Employee_Info AS e
+       
+    
+        '''
+
+    cursor.execute(query)
+    # grab the column headers from the returned data
+    column_headers = [x[0] for x in cursor.description]
+
+    # create an empty dictionary object to use in
+    # putting column headers together with data
+    json_data = []
+
+    # fetch all the data from the cursor
+    theData = cursor.fetchall()
+
+    # for each of the rows, zip the data elements together with
+    # the column headers.
+    for row in theData:
+        json_data.append(dict(zip(column_headers, row)))
+
+    return jsonify(json_data)
+
+
 
