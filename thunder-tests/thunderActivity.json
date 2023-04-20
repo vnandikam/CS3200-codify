@@ -270,6 +270,25 @@
     "method": "DELETE",
     "sortNum": 0,
     "created": "2023-04-20T01:03:58.464Z",
+    "modified": "2023-04-20T04:00:23.214Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"employee_id\" : 20,\n  \"fname\": \"Flss\",\n  \"dep\": 30,\n  \"title\": \"Secretary\"\n  \n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "ff7a0b7c-55d9-4c0e-86ca-0076e19fd5b6",
+    "colId": "history",
+    "containerId": "",
+    "name": "DELETE 2 employee_removal Copy",
+    "url": "localhost:8001/a/employee_removal",
+    "method": "DELETE",
+    "sortNum": 0,
+    "created": "2023-04-20T01:03:58.464Z",
     "modified": "2023-04-20T01:05:11.883Z",
     "headers": [],
     "params": [],
@@ -399,12 +418,28 @@
     "tests": []
   },
   {
+    "_id": "89cf3cc1-8eb8-467b-9b3b-4a1be58f9c6f",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:8001/u/create_project",
+    "url": "localhost:8001/u/create_project",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-04-20T02:57:50.341Z",
+    "modified": "2023-04-20T02:57:50.341Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"project_id\": \"186\",\n  \"project_name\": \"hello\",\n  \"project_description\": \"ljasdlkfjlkasjdlfk lksdjflkj\",\n  \"project_languages\": \"Java, Python\",\n  \"project_location\": \"London\",\n  \"project_user_id\": \"1\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
     "_id": "328ee7aa-dbfa-490b-b053-e09c84b8181b",
     "colId": "history",
     "containerId": "",
-    "name": "POST 2 create_project",
-    "url": "localhost:8001/u/create_project",
-    "method": "POST",
     "name": "DELETE delete_project",
     "url": "localhost:8001/u/delete_project",
     "method": "DELETE",
@@ -429,31 +464,31 @@
     "method": "DELETE",
     "sortNum": 0,
     "created": "2023-04-20T03:24:30.426Z",
+    "modified": "2023-04-20T03:59:40.764Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"project_id\" : 23\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "65e6625f-8d38-419b-b781-f1712492e96e",
+    "colId": "history",
+    "containerId": "",
+    "name": "DELETE 2 delete_project Copy",
+    "url": "localhost:8001/u/delete_project",
+    "method": "DELETE",
+    "sortNum": 0,
+    "created": "2023-04-20T03:24:30.426Z",
     "modified": "2023-04-20T03:26:42.775Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
       "raw": "{\n  \"project_id\" : 9\n}",
-      "form": []
-    },
-    "tests": []
-  },
-  {
-    "_id": "89cf3cc1-8eb8-467b-9b3b-4a1be58f9c6f",
-    "colId": "history",
-    "containerId": "",
-    "name": "localhost:8001/u/create_project",
-    "url": "localhost:8001/u/create_project",
-    "method": "POST",
-    "sortNum": 0,
-    "created": "2023-04-20T02:57:50.341Z",
-    "modified": "2023-04-20T02:57:50.341Z",
-    "headers": [],
-    "params": [],
-    "body": {
-      "type": "json",
-      "raw": "{\n  \"project_id\": \"186\",\n  \"project_name\": \"hello\",\n  \"project_description\": \"ljasdlkfjlkasjdlfk lksdjflkj\",\n  \"project_languages\": \"Java, Python\",\n  \"project_location\": \"London\",\n  \"project_user_id\": \"1\"\n}",
       "form": []
     },
     "tests": []
