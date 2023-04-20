@@ -184,7 +184,7 @@ def create_proj():
     location = the_data['project_location']
 
     query = 'INSERT INTO projects (project_id, location, project_description, project_name, project_status, project_languages) VALUES ('
-    query += '"' + str(project_id) + '",'
+    query += '"' + project_id + '",'
     query += '"' + location + '",'
     query += '"' + description + '",'
     query += '"' + name + '",'
@@ -194,23 +194,22 @@ def create_proj():
     cursor.execute(query)
     return 'Success'
 
-    
 
-#Adds Project Leader
-@users.route('/add_leader', methods = ['PUT'])
-def add_proj_lead():
+#Deletes Project
+@users.route('/delete_project', methods = ['DELETE'])
+def delete_proj():
     the_data = request.json
     current_app.logger.info(the_data)
-    cursor = db.get_db().cursor()
 
-
-    # extracting the info
+    # extracting the variable
     project_id = the_data['project_id']
-    user_id = the_data['project_user_id']
 
-    query = 'UPDATE users SET project_id = '
-    query += str(project_id) + ' WHERE user_id = "'
-    query += str(user_id) + '"'
+    # constructing the query
+    query = 'delete from projects where project_id="'
+    query += str(project_id)
+    query += '";'
 
-    cursor.execute(query)
-    return 'Success'
+    current_app.logger.info(query)
+
+    return 'Success!'
+
