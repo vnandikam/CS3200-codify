@@ -195,6 +195,7 @@ def create_proj():
     return 'Success'
 
 
+
 #Deletes Project
 @users.route('/delete_project', methods = ['DELETE'])
 def delete_proj():
@@ -212,4 +213,26 @@ def delete_proj():
     current_app.logger.info(query)
 
     return 'Success!'
+
+@users.route('/get_project', methods = ['GET'])
+def get_proj():
+
+    cursor = db.get_db().cursor()
+
+    # constructing the query
+    query = '''
+        SELECT DISTINCT projects.project_id, projects.project_name, projects.project_description, projects.project_status, projects.project_languages, users.user_id
+        FROM users JOIN projects
+        ORDER BY users.user_id;'''
+
+    cursor.execute(query)
+    row_headers = [x[0] for x in cursor.description]
+    json_data = []
+    theData = cursor.fetchall()
+    for row in theData:
+        json_data.append(dict(zip(row_headers, row)))
+    the_response = make_response(jsonify(json_data))
+    the_response.status_code = 200
+    the_response.mimetype = 'application/json'
+    return the_response
 
