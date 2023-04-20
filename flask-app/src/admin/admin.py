@@ -312,10 +312,10 @@ def add_new_employee_info():
     return 'Success!'
 
 
-# delete an entry to the employee info dashboard
+# delete an employee from the dashboard
 
-@admin.route('/employee_info_delete', methods=['DELETE'])
-def remove_employee_info():
+@admin.route('/employee_removal', methods=['DELETE'])
+def remove_employee():
 
     # collecting data from request object
     the_data = request.json
@@ -328,17 +328,10 @@ def remove_employee_info():
     title = the_data['title']
 
     # constructing the query
-    query = 'insert into employee_info (employee_id, fname, dep, title) values ("'
-    query += str(employee_id) + '","'
-    query += fname + '","'
-    query += str(dep) + '","'
-    query += title + ')'
+    query = 'delete from employee_info where employee_id="'
+    query += str(employee_id)
+    query += '"'
 
     current_app.logger.info(query)
-
-    # executing and committing the insert statement
-    cursor = db.get_db().cursor()
-    cursor.execute(query)
-    db.get_db().commit()
 
     return 'Success!'
