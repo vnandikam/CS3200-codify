@@ -14,5 +14,5 @@ Codify is a social media platform that will allow college students to collaborat
 1. Start the containers with `docker compose up`.  To run in detached mode, run `docker compose up -d`. 
 
 
-
+Video: https://drive.google.com/file/d/1qYo1S6Uq3xB2zx5qdKyXLkULk5zOKM8W/view?usp=sharing 
 
