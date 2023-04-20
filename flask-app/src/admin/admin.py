@@ -310,3 +310,28 @@ def add_new_employee_info():
     current_app.logger.info(query)
 
     return 'Success!'
+
+
+# delete an employee from the dashboard
+
+@admin.route('/employee_removal', methods=['DELETE'])
+def remove_employee():
+
+    # collecting data from request object
+    the_data = request.json
+    current_app.logger.info(the_data)
+
+    # extracting the variable
+    employee_id = the_data['employee_id']
+    fname = the_data['fname']
+    dep = the_data['dep']
+    title = the_data['title']
+
+    # constructing the query
+    query = 'delete from employee_info where employee_id="'
+    query += str(employee_id)
+    query += '"'
+
+    current_app.logger.info(query)
+
+    return 'Success!'
