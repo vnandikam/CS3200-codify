@@ -197,13 +197,13 @@ def create_proj():
     
 
 #Adds Project Leader
-@users.route('/add-leader', methods = ['PUT'])
+@users.route('/add_leader', methods = ['PUT'])
 def add_proj_lead():
     the_data = request.json
     current_app.logger.info(the_data)
     cursor = db.get_db().cursor()
 
-    
+
     # extracting the info
     project_id = the_data['project_id']
     user_id = the_data['project_user_id']
