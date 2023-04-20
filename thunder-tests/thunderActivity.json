@@ -333,20 +333,6 @@
     "tests": []
   },
   {
-    "_id": "a485a33a-e4cb-4781-bf0b-016a846b46f2",
-    "colId": "history",
-    "containerId": "",
-    "name": "PUT add-users",
-    "url": "localhost:8001/u/add-users",
-    "method": "PUT",
-    "sortNum": 0,
-    "created": "2023-04-20T01:25:07.261Z",
-    "modified": "2023-04-20T01:25:30.394Z",
-    "headers": [],
-    "params": [],
-    "tests": []
-  },
-  {
     "_id": "129924db-ec78-484b-95be-7ad237b33eaa",
     "colId": "history",
     "containerId": "",
@@ -369,12 +355,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-04-20T01:27:15.613Z",
-    "modified": "2023-04-20T01:40:48.614Z",
+    "modified": "2023-04-20T02:11:22.793Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"project_id\" : 220,\n  \"project_location\": \"Boston\",\n  \"project_description\": \"Application to collaborate on code\",\n  \"project_name\": \"Codify\",\n  \"project_status\": 0,\n  \"project_languages\": \"Python\",\n  \"project_user_id\": 1\n  \n}",
+      "raw": "{\n  \"project_id\" : 220,\n  \"project_location\": \"Veda\",\n  \"project_description\": \"Application to collaborate on code\",\n  \"project_name\": \"Codify\",\n  \"project_status\": 0,\n  \"project_languages\": \"Python\"\n}",
       "form": []
     },
     "tests": []
