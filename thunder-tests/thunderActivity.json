@@ -333,20 +333,6 @@
     "tests": []
   },
   {
-    "_id": "a485a33a-e4cb-4781-bf0b-016a846b46f2",
-    "colId": "history",
-    "containerId": "",
-    "name": "PUT add-users",
-    "url": "localhost:8001/u/add-users",
-    "method": "PUT",
-    "sortNum": 0,
-    "created": "2023-04-20T01:25:07.261Z",
-    "modified": "2023-04-20T01:25:30.394Z",
-    "headers": [],
-    "params": [],
-    "tests": []
-  },
-  {
     "_id": "129924db-ec78-484b-95be-7ad237b33eaa",
     "colId": "history",
     "containerId": "",
@@ -369,12 +355,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-04-20T01:27:15.613Z",
-    "modified": "2023-04-20T01:40:48.614Z",
+    "modified": "2023-04-20T02:11:22.793Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"project_id\" : 220,\n  \"project_location\": \"Boston\",\n  \"project_description\": \"Application to collaborate on code\",\n  \"project_name\": \"Codify\",\n  \"project_status\": 0,\n  \"project_languages\": \"Python\",\n  \"project_user_id\": 1\n  \n}",
+      "raw": "{\n  \"project_id\" : 220,\n  \"project_location\": \"Veda\",\n  \"project_description\": \"Application to collaborate on code\",\n  \"project_name\": \"Codify\",\n  \"project_status\": 0,\n  \"project_languages\": \"Python\"\n}",
       "form": []
     },
     "tests": []
@@ -394,7 +380,7 @@
     "tests": []
   },
   {
-    "_id": "0d2a48e3-c1f2-4858-b747-c503a206a65a",
+    "_id": "43e7ed91-b75b-47b7-a2a2-9f5a3fcd191c",
     "colId": "history",
     "containerId": "",
     "name": "POST create_project",
@@ -419,52 +405,36 @@
     "name": "POST 2 create_project",
     "url": "localhost:8001/u/create_project",
     "method": "POST",
+    "name": "DELETE delete_project",
+    "url": "localhost:8001/u/delete_project",
+    "method": "DELETE",
     "sortNum": 0,
-    "created": "2023-04-20T02:12:18.389Z",
-    "modified": "2023-04-20T02:33:08.322Z",
+    "created": "2023-04-20T03:24:30.426Z",
+    "modified": "2023-04-20T03:26:28.784Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"project_id\": \"186\",\n  \"project_name\": \"hello\",\n  \"project_description\": \"ljasdlkfjlkasjdlfk lksdjflkj\",\n  \"project_languages\": \"Java, Python\",\n  \"project_location\": \"London\",\n  \"project_user_id\": \"1\"\n}",
+      "raw": "{\n  \"project_id\" : 2\n}",
       "form": []
     },
     "tests": []
   },
   {
-    "_id": "7b6d0117-9b58-4125-a6d7-d191fd01d6f5",
+    "_id": "2dacc7e0-439c-4eeb-9a3e-7e383be1e573",
     "colId": "history",
     "containerId": "",
-    "name": "localhost:8001/u/add_leader",
-    "url": "localhost:8001/u/add_leader",
-    "method": "GET",
+    "name": "DELETE 2 delete_project",
+    "url": "localhost:8001/u/delete_project",
+    "method": "DELETE",
     "sortNum": 0,
-    "created": "2023-04-20T02:17:58.652Z",
-    "modified": "2023-04-20T02:17:58.652Z",
+    "created": "2023-04-20T03:24:30.426Z",
+    "modified": "2023-04-20T03:26:42.775Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"project_id\": 186,\n  \"project_name\": \"hello\",\n  \"project_description\": \"ljasdlkfjlkasjdlfk lksdjflkj\",\n  \"project_languages\": \"Java, Python\",\n  \"project_location\": \"London\",\n  \"project_user_id\": 1\n}",
-      "form": []
-    },
-    "tests": []
-  },
-  {
-    "_id": "146686c9-2e3f-4bb3-8f01-9a7ea93ea4e1",
-    "colId": "history",
-    "containerId": "",
-    "name": "localhost:8001/u/add_leader",
-    "url": "localhost:8001/u/add_leader",
-    "method": "PUT",
-    "sortNum": 0,
-    "created": "2023-04-20T02:18:09.542Z",
-    "modified": "2023-04-20T02:33:16.739Z",
-    "headers": [],
-    "params": [],
-    "body": {
-      "type": "json",
-      "raw": "{\n  \"project_id\": \"100\",\n  \"project_name\": \"hello\",\n  \"project_description\": \"ljasdlkfjlkasjdlfk lksdjflkj\",\n  \"project_languages\": \"Java, Python\",\n  \"project_location\": \"London\",\n  \"project_user_id\": \"1\"\n}",
+      "raw": "{\n  \"project_id\" : 9\n}",
       "form": []
     },
     "tests": []
