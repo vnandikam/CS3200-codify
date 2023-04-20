@@ -310,3 +310,35 @@ def add_new_employee_info():
     current_app.logger.info(query)
 
     return 'Success!'
+
+
+# delete an entry to the employee info dashboard
+
+@admin.route('/employee_info_delete', methods=['DELETE'])
+def remove_employee_info():
+
+    # collecting data from request object
+    the_data = request.json
+    current_app.logger.info(the_data)
+
+    # extracting the variable
+    employee_id = the_data['employee_id']
+    fname = the_data['fname']
+    dep = the_data['dep']
+    title = the_data['title']
+
+    # constructing the query
+    query = 'insert into employee_info (employee_id, fname, dep, title) values ("'
+    query += str(employee_id) + '","'
+    query += fname + '","'
+    query += str(dep) + '","'
+    query += title + ')'
+
+    current_app.logger.info(query)
+
+    # executing and committing the insert statement
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    db.get_db().commit()
+
+    return 'Success!'
