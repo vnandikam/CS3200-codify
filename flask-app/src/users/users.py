@@ -157,14 +157,13 @@ def add_user_proj():
     current_app.logger.info(the_data)
     cursor = db.get_db().cursor()
     column = [row['user_id'] for row in the_data]
-    r = the_data[1]['project_id']
-
 
     for value in column:
         query = '''
-            UPDATE users SET project_id = (SELECT project_id FROM users WHERE user_id = 1) WHERE user_id =
+            UPDATE users SET project_id = (SELECT project_id FROM users WHERE user_id = 
         '''
-        query += str(value) + '";"'
+        query += str(1) + ') WHERE user_id = "'
+        query += str(value) + '";'
         cursor.execute(query)
 
     return 'Success!'
@@ -177,29 +176,41 @@ def create_proj():
     the_data = request.json
     current_app.logger.info(the_data)
     cursor = db.get_db().cursor()
-    #extracting the info
+    # extracting the info
     project_id = the_data['project_id']
     name = the_data['project_name']
     description = the_data['project_description']
-    user_id = the_data['project_user_id']
     languages = the_data['project_languages']
     location = the_data['project_location']
 
-    query = 'insert into projects \
-        (project_id,location,project_description,project_name,project_status,project_languages) \
-            values ("'
-    query += str(project_id) + '","'
-    query += location + '","'
-    query += description + '","'
-    query += name + ','
-    query += str(0) + '","'
-    query += languages + '");"'
+    query = 'INSERT INTO projects (project_id, location, project_description, project_name, project_status, project_languages) VALUES ('
+    query += '"' + str(project_id) + '",'
+    query += '"' + location + '",'
+    query += '"' + description + '",'
+    query += '"' + name + '",'
+    query += str(0) + ','
+    query += '"' + languages + '")'
 
     cursor.execute(query)
+    return 'Success'
+
+    
+
+#Adds Project Leader
+@users.route('/add-leader', methods = ['PUT'])
+def add_proj_lead():
+    the_data = request.json
+    current_app.logger.info(the_data)
+    cursor = db.get_db().cursor()
+
+    
+    # extracting the info
+    project_id = the_data['project_id']
+    user_id = the_data['project_user_id']
 
     query = 'UPDATE users SET project_id = '
-    query += str(project_id) + '" WHERE user_id ="'
-    query += str(user_id) + '";"'
+    query += str(project_id) + ' WHERE user_id = "'
+    query += str(user_id) + '"'
 
     cursor.execute(query)
     return 'Success'
