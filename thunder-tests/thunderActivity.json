@@ -28,20 +28,6 @@
     "tests": []
   },
   {
-    "_id": "009767e6-6e82-4cd0-b8bd-ddde5ff53f5f",
-    "colId": "history",
-    "containerId": "",
-    "name": "GET project_creators",
-    "url": "localhost:8001/u/project_creators",
-    "method": "GET",
-    "sortNum": 0,
-    "created": "2023-04-18T19:52:30.855Z",
-    "modified": "2023-04-18T19:52:30.855Z",
-    "headers": [],
-    "params": [],
-    "tests": []
-  },
-  {
     "_id": "865601de-e547-4b9d-bff2-81568ba1f637",
     "colId": "history",
     "containerId": "",
@@ -259,6 +245,152 @@
       "raw": "{\n  \"employee_id\" : 102,\n  \"fname\": \"Juliette\",\n  \"dep\": 155,\n  \"title\": \"Librarian\"\n  \n}",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "f5d313f8-a212-4629-87a3-d3e7abb07fb0",
+    "colId": "history",
+    "containerId": "",
+    "name": "DELETE employee_removal",
+    "url": "localhost:8001/a/employee_removal",
+    "method": "DELETE",
+    "sortNum": 0,
+    "created": "2023-04-20T01:00:04.347Z",
+    "modified": "2023-04-20T01:00:04.347Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "88635079-1d2b-4134-a7c8-4687a78f36ff",
+    "colId": "history",
+    "containerId": "",
+    "name": "DELETE 2 employee_removal",
+    "url": "localhost:8001/a/employee_removal",
+    "method": "DELETE",
+    "sortNum": 0,
+    "created": "2023-04-20T01:03:58.464Z",
+    "modified": "2023-04-20T01:05:11.883Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"employee_id\" : 2,\n  \"fname\": \"Flss\",\n  \"dep\": 25,\n  \"title\": \"Food Chemist\"\n  \n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "ec3c2578-5a91-439c-973c-8c5427fedb53",
+    "colId": "history",
+    "containerId": "",
+    "name": "PUT employee_info_put",
+    "url": "localhost:8001/a/employee_info_put",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-04-20T01:07:58.612Z",
+    "modified": "2023-04-20T01:19:08.626Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"employee_id\" : 108,\n  \"fname\": \"Dewi\",\n  \"dep\": 15,\n  \"title\": \"Editor\"\n  \n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "81f7eee7-e2fe-4405-8b01-fb7a22ea02af",
+    "colId": "history",
+    "containerId": "",
+    "name": "PUT 2 employee_info_put",
+    "url": "localhost:8001/a/employee_info_put",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-04-20T01:08:27.048Z",
+    "modified": "2023-04-20T01:19:34.042Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"employee_id\" : 220,\n  \"fname\": \"Juliette\",\n  \"dep\": 8,\n  \"title\": \"Social Worker\"\n  \n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "3b0e5e86-d2d5-410b-875c-b849bc0738f3",
+    "colId": "history",
+    "containerId": "",
+    "name": "PUT add-users",
+    "url": "localhost:8001/a/add-users",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-04-20T01:24:55.996Z",
+    "modified": "2023-04-20T01:24:55.996Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "a485a33a-e4cb-4781-bf0b-016a846b46f2",
+    "colId": "history",
+    "containerId": "",
+    "name": "PUT add-users",
+    "url": "localhost:8001/u/add-users",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-04-20T01:25:07.261Z",
+    "modified": "2023-04-20T01:25:30.394Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "129924db-ec78-484b-95be-7ad237b33eaa",
+    "colId": "history",
+    "containerId": "",
+    "name": "PUT 2 add-users",
+    "url": "localhost:8001/a/add-users",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-04-20T01:26:19.313Z",
+    "modified": "2023-04-20T01:26:19.313Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "e2015ac2-e5f7-4ee2-a0cb-25578e6e4dd5",
+    "colId": "history",
+    "containerId": "",
+    "name": "POST create_project",
+    "url": "localhost:8001/u/create_project",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-04-20T01:27:15.613Z",
+    "modified": "2023-04-20T01:40:48.614Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"project_id\" : 220,\n  \"project_location\": \"Boston\",\n  \"project_description\": \"Application to collaborate on code\",\n  \"project_name\": \"Codify\",\n  \"project_status\": 0,\n  \"project_languages\": \"Python\",\n  \"project_user_id\": 1\n  \n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "11096886-c517-4ee8-921b-def9a22fa054",
+    "colId": "history",
+    "containerId": "",
+    "name": "POST 2 create_project",
+    "url": "localhost:8001/u/create_project",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-04-20T01:27:32.562Z",
+    "modified": "2023-04-20T01:27:32.562Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]

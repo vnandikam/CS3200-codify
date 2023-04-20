@@ -335,3 +335,27 @@ def remove_employee():
     current_app.logger.info(query)
 
     return 'Success!'
+
+# update an Employee 
+@admin.route('/employee_info_put', methods = ['PUT'])
+def put_employee_info():
+    # collecting data from request object
+    the_data = request.json
+    current_app.logger.info(the_data)
+
+    # extracting the variable
+    employee_id = the_data['employee_id']
+    fname = the_data['fname']
+    dep = the_data['dep']
+    title = the_data['title']
+
+    # constructing the query
+    query = 'insert into employee_info (employee_id, fname, dep, title) values ("'
+    query += str(employee_id) + '","'
+    query += fname + '","'
+    query += str(dep) + '","'
+    query += title + ')'
+
+    current_app.logger.info(query)
+
+    return 'Success!'
